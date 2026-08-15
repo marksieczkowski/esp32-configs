@@ -81,26 +81,26 @@ api:
 ota:
   - platform: esphome
     id: ota_esphome
-  # Enables OTA firmware flashing from a URL (used by the update component below)
-  - platform: http_request
-    id: ota_http_request
+#   # Enables OTA firmware flashing from a URL (used by the update component below)
+#   - platform: http_request
+#     id: ota_http_request
 
-# Required by the ota http_request platform and the update component.
-# verify_ssl: false skips TLS cert validation to reduce heap/RAM pressure during
-# the download; the manifest's MD5 still verifies firmware integrity before flashing.
-http_request:
-  id: http_request_component
-  verify_ssl: false
+# # Required by the ota http_request platform and the update component.
+# # verify_ssl: false skips TLS cert validation to reduce heap/RAM pressure during
+# # the download; the manifest's MD5 still verifies firmware integrity before flashing.
+# http_request:
+#   id: http_request_component
+#   verify_ssl: false
 
-update:
-  # Managed updates via HTTP request: periodically checks the published manifest
-  # and exposes a "Firmware Update" entity, pointing at this device's GitHub Pages
-  # manifest. Pages URLs avoid the redirect/buffer issues of Release download URLs.
-  - platform: http_request
-    id: update_http_request
-    name: "Firmware Update"
-    source: https://athom-tech.github.io/esp32-configs/firmware/athom-garage-door.manifest.json
-    # update_interval defaults to 6h (how often it checks, not installs)
+# update:
+#   # Managed updates via HTTP request: periodically checks the published manifest
+#   # and exposes a "Firmware Update" entity, pointing at this device's GitHub Pages
+#   # manifest. Pages URLs avoid the redirect/buffer issues of Release download URLs.
+#   - platform: http_request
+#     id: update_http_request
+#     name: "Firmware Update"
+#     source: https://athom-tech.github.io/esp32-configs/firmware/athom-garage-door.manifest.json
+#     # update_interval defaults to 6h (how often it checks, not installs)
 
 logger:
   baud_rate: 0  # 0 Enables logging, but disables serial-port logging to free CPU and memory
@@ -140,7 +140,7 @@ bluetooth_proxy:
   active: true
 
 dashboard_import:
-  package_import_url: github://athom-tech/esp32-configs/athom-garage-door.yaml
+  package_import_url: github://marksieczkowski/esp32-configs/athom-garage-door.yaml
 
 sensor:
   - platform: uptime
