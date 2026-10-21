@@ -123,7 +123,7 @@ wifi:
 
 captive_portal:
 
-esp32_improv:
+improv_ble:
   authorizer: none
 
 esp32_ble_tracker:
