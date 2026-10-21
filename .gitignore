@@ -9,3 +9,4 @@
 **/platformio.ini
 /secrets.yaml
 .DS_Store
+**/.DS_Store
